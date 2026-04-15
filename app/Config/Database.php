@@ -28,7 +28,7 @@ class Database extends Config
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => '',
+        'password'     => 'mt4huf1q',
         'database'     => 'aptikom',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',

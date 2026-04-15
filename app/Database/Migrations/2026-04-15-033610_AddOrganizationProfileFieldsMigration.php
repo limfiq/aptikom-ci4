@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddMissingFieldsToOrganizationProfile extends Migration
+class AddOrganizationProfileFields extends Migration
 {
     public function up()
     {

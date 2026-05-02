@@ -10,25 +10,18 @@ class Contact extends BaseController
     public function index(): string
     {
         $orgProfileModel = new \App\Models\OrganizationProfileModel();
-        // Ambil profil organisasi dari database; fallback ke default jika kosong
-        $info = $orgProfileModel->first() ?? [
-            'name'         => 'APTIKOM Jatim',
-            'fullName'     => 'Asosiasi Pendidikan Tinggi Informatika dan Komputer Jawa Timur',
-            'address'      => 'Jl. AMIKOM No. 1, Condongcatur, Depok',
-            'city'         => 'Yogyakarta',
-            'province'     => 'Daerah Istimewa Yogyakarta',
-            'postalCode'   => '55283',
-            'phone'        => '+62 274 884201',
-            'email'        => 'sekretariat@aptikom.org',
-            'weekdayHours' => 'Senin – Jumat: 08:00 – 16:00',
-            'weekendHours' => 'Sabtu – Minggu: Tutup',
-            'latitude'     => '-7.75466',
-            'longitude'    => '110.40712',
-            'facebook'     => '',
-            'twitter'      => '',
-            'instagram'    => '',
-            'linkedin'     => '',
-        ];
+        $info = $orgProfileModel->first();
+
+        // Fallback for UI safety if database is completely empty
+        if (!$info) {
+            $info = [
+                'name'         => 'APTIKOM Jatim',
+                'fullName'     => 'Asosiasi Pendidikan Tinggi Informatika dan Komputer Jawa Timur',
+                'address'      => 'Jakarta, Indonesia',
+                'phone'        => '+62 274 884201',
+                'email'        => 'sekretariat@aptikom.org',
+            ];
+        }
 
         return view('contact', ['info' => $info]);
     }

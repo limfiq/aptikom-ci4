@@ -99,12 +99,12 @@
                 <div class="relative w-72 h-72 mx-auto mb-8">
                     <div class="absolute inset-0 bg-primary rounded-[48px] transform -rotate-6 opacity-5"></div>
                     <div class="absolute inset-0 bg-secondary rounded-[48px] transform rotate-6 opacity-10"></div>
-                    <img src="<?= $chairperson['image'] ?? 'https://randomuser.me/api/portraits/men/1.jpg' ?>"
-                        alt="<?= esc($chairperson['name'] ?? 'Ketua Umum') ?>"
+                    <img src="<?= $profile['chairpersonPhoto'] ?? $chairperson['image'] ?? 'https://randomuser.me/api/portraits/men/1.jpg' ?>"
+                        alt="<?= esc($profile['chairperson'] ?? $chairperson['name'] ?? 'Ketua Umum') ?>"
                         class="relative w-full h-full object-cover rounded-[48px] border-4 border-white shadow-2xl z-10" />
                 </div>
                 <h3 class="text-2xl font-black text-gray-900">
-                    <?= esc($chairperson['name'] ?? 'Prof. Dr. Ir. Zainal A. Hasibuan, MLS., Ph.D.') ?>
+                    <?= esc($profile['chairperson'] ?? $chairperson['name'] ?? 'Prof. Dr. Ir. Zainal A. Hasibuan, MLS., Ph.D.') ?>
                 </h3>
                 <p class="text-primary font-black uppercase tracking-[0.2em] text-xs mt-2">
                     <?= esc($chairperson['position'] ?? 'Ketua Umum') ?> APTIKOM Jatim

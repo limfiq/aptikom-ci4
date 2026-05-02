@@ -16,7 +16,7 @@ class OrganizationProfileModel extends Model
         'name', 'fullName', 'abbreviation', 'establishedDate', 'legalStatus', 'registrationNumber',
         'email', 'phone', 'address', 'city', 'province', 'postalCode',
         'website', 'facebook', 'twitter', 'instagram', 'linkedin', 'youtube',
-        'chairperson', 'secretary', 'treasurer', 'totalMembers', 'totalInstitutions',
+        'chairperson', 'chairpersonPhoto', 'secretary', 'treasurer', 'totalMembers', 'totalInstitutions',
         'history', 'vision', 'mission', 'goals', 'objectives', 'structure', 'logo',
         'latitude', 'longitude', 'weekdayHours', 'weekendHours'
     ];

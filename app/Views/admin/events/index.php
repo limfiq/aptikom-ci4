@@ -30,6 +30,7 @@
                         <th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-gray-400">Kegiatan</th>
                         <th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-gray-400">Waktu & Tempat</th>
                         <th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-gray-400">Tipe</th>
+                        <th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-gray-400">Status</th>
                         <th class="px-6 py-4 text-right text-[10px] font-black uppercase tracking-widest text-gray-400">Aksi</th>
                     </tr>
                 </thead>
@@ -62,6 +63,12 @@
                                     <?= $event['type'] == 'conference' ? 'bg-purple-100 text-purple-700' : 
                                        ($event['type'] == 'workshop' ? 'bg-blue-100 text-blue-700' : 'bg-emerald-100 text-emerald-700') ?>">
                                     <?= $event['type'] ?>
+                                </span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter
+                                    <?= $event['status'] == 'open' ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-600' ?>">
+                                    <?= $event['status'] ?>
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-right">

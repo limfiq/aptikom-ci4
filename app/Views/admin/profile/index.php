@@ -33,7 +33,7 @@
             <div class="space-y-6">
                 <div class="grid gap-2">
                     <label class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] px-1">Nama Organisasi / Kantor</label>
-                    <input type="text" name="officeName" value="<?= $profile['officeName'] ?? '' ?>" class="w-full bg-gray-50 border-0 rounded-3xl px-6 py-5 focus:ring-4 focus:ring-primary/10 transition-all font-bold text-gray-900" placeholder="APTIKOM Jatim Pusat">
+                    <input type="text" name="officeName" value="<?= $profile['officeName'] ?? $profile['name'] ?? '' ?>" class="w-full bg-gray-50 border-0 rounded-3xl px-6 py-5 focus:ring-4 focus:ring-primary/10 transition-all font-bold text-gray-900" placeholder="APTIKOM Jatim Pusat">
                 </div>
                 <div class="grid gap-2">
                     <label class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] px-1">Alamat Lengkap</label>
@@ -52,6 +52,28 @@
                         <label class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] px-1">Kode Pos</label>
                         <input type="text" name="postalCode" value="<?= $profile['postalCode'] ?? '' ?>" class="w-full bg-gray-50 border-0 rounded-3xl px-6 py-5 focus:ring-4 focus:ring-primary/10 transition-all font-bold text-gray-900">
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chairperson Section -->
+        <div class="bg-white rounded-[48px] shadow-sm border border-gray-100 p-10 space-y-8">
+            <div class="flex items-center gap-4">
+                <div class="p-4 bg-emerald-50 text-emerald-600 rounded-3xl">
+                    <i data-lucide="user" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-black text-gray-900">Ketua Umum</h2>
+            </div>
+
+            <div class="space-y-6">
+                <div class="grid gap-2">
+                    <label class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] px-1">Nama Ketua Umum</label>
+                    <input type="text" name="chairperson" value="<?= $profile['chairperson'] ?? '' ?>" class="w-full bg-gray-50 border-0 rounded-3xl px-6 py-5 focus:ring-4 focus:ring-primary/10 transition-all font-bold text-gray-900" placeholder="Nama Lengkap Beserta Gelar">
+                </div>
+                <div class="grid gap-2">
+                    <label class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] px-1">URL Foto Ketua Umum</label>
+                    <input type="text" name="chairpersonPhoto" value="<?= $profile['chairpersonPhoto'] ?? '' ?>" class="w-full bg-gray-50 border-0 rounded-3xl px-6 py-5 focus:ring-4 focus:ring-primary/10 transition-all font-bold text-gray-900" placeholder="https://example.com/photo.jpg">
+                    <p class="text-[10px] text-gray-400 px-1 font-medium">Gunakan URL foto resmi untuk ditampilkan di halaman utama.</p>
                 </div>
             </div>
         </div>

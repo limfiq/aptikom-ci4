@@ -40,7 +40,8 @@ class Events extends BaseController
             'title'    => 'required|min_length[5]|max_length[255]',
             'date'     => 'required|valid_date',
             'location' => 'required',
-            'type'     => 'required'
+            'type'     => 'required',
+            'status'   => 'required|in_list[open,closed]'
         ])) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
@@ -50,6 +51,7 @@ class Events extends BaseController
             'date'        => $this->request->getPost('date'),
             'location'    => $this->request->getPost('location'),
             'type'        => $this->request->getPost('type'),
+            'status'      => $this->request->getPost('status'),
             'description' => $this->request->getPost('description'),
             'link'        => $this->request->getPost('link') ?: null,
         ]);
@@ -80,7 +82,8 @@ class Events extends BaseController
             'title'    => 'required|min_length[5]|max_length[255]',
             'date'     => 'required|valid_date',
             'location' => 'required',
-            'type'     => 'required'
+            'type'     => 'required',
+            'status'   => 'required|in_list[open,closed]'
         ])) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
@@ -90,6 +93,7 @@ class Events extends BaseController
             'date'        => $this->request->getPost('date'),
             'location'    => $this->request->getPost('location'),
             'type'        => $this->request->getPost('type'),
+            'status'      => $this->request->getPost('status'),
             'description' => $this->request->getPost('description'),
             'link'        => $this->request->getPost('link') ?: null,
         ]);

@@ -50,6 +50,16 @@
                         <?php endforeach; ?>
                     </select>
                 </div>
+
+                <!-- Status Select -->
+                <div class="space-y-3">
+                    <label for="status" class="text-sm font-black text-gray-900">Status Pendaftaran</label>
+                    <select name="status" id="status" 
+                             class="w-full bg-gray-50 border border-gray-100 rounded-2xl px-5 py-4 focus:bg-white focus:ring-4 focus:ring-primary/10 transition-all font-medium text-gray-900 appearance-none cursor-pointer">
+                        <option value="open" <?= old('status', $event['status'] ?? 'open') == 'open' ? 'selected' : '' ?>>Buka (Open)</option>
+                        <option value="closed" <?= old('status', $event['status'] ?? '') == 'closed' ? 'selected' : '' ?>>Tutup (Closed)</option>
+                    </select>
+                </div>
             </div>
 
             <!-- Location Input -->

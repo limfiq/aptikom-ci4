@@ -2,22 +2,28 @@
 
 namespace App\Cells;
 
-use App\Models\ContactInfoModel;
+use App\Models\OrganizationProfileModel;
 
 class FooterCell
 {
+    protected $model;
+
+    public function __construct()
+    {
+        $this->model = new OrganizationProfileModel();
+    }
+
     public function address(): string
     {
-        $model = new \App\Models\OrganizationProfileModel();
-        $profile = $model->first();
+        $profile = $this->model->first();
 
-        // Fallback data
+        // Fallback data if DB is empty
         if (!$profile) {
             $profile = [
-                'officeName' => 'APTIKOM Jatim',
-                'address'    => 'Jl. AMIKOM No. 1, Condongcatur, Depok',
-                'phone'      => '+62 274 884201',
-                'email'      => 'sekretariat@aptikom.org'
+                'name'    => 'APTIKOM Jatim',
+                'address' => 'Jl. AMIKOM No. 1, Condongcatur, Depok',
+                'phone'   => '+62 274 884201',
+                'email'   => 'sekretariat@aptikom.org'
             ];
         }
 
@@ -26,8 +32,7 @@ class FooterCell
 
     public function social(): string
     {
-        $model = new \App\Models\OrganizationProfileModel();
-        $profile = $model->first();
+        $profile = $this->model->first();
 
         return view('cells/footer_social', ['profile' => $profile]);
     }

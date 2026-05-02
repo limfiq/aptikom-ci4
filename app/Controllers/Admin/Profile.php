@@ -3,20 +3,20 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\ContactInfoModel;
+use App\Models\OrganizationProfileModel;
 
 class Profile extends BaseController
 {
-    protected $contactModel;
+    protected $profileModel;
 
     public function __construct()
     {
-        $this->contactModel = new ContactInfoModel();
+        $this->profileModel = new OrganizationProfileModel();
     }
 
     public function index()
     {
-        $profile = $this->contactModel->first();
+        $profile = $this->profileModel->first();
         
         $data = [
             'profile' => $profile,
@@ -28,13 +28,13 @@ class Profile extends BaseController
 
     public function update()
     {
-        $profile = $this->contactModel->first();
+        $profile = $this->profileModel->first();
         $data = $this->request->getPost();
 
         if ($profile) {
-            $this->contactModel->update($profile['id'], $data);
+            $this->profileModel->update($profile['id'], $data);
         } else {
-            $this->contactModel->save($data);
+            $this->profileModel->save($data);
         }
 
         return redirect()->to('/admin/profile')->with('success', 'Profil organisasi berhasil diperbarui');
